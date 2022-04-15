@@ -1,5 +1,5 @@
 Project 2 Write-Ups
-Aaron Jarmusch
+- Aaron Jarmusch
 
 **Description:**
 
