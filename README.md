@@ -9,97 +9,97 @@ These are a cumulation of the write-ups for all of project two. If the actual fi
 
 ***Chall_00***
 
-checksec command:
+Checksec command:
 
 Python file:
 
 
 ***Chall_01***
-checksec command:
+Checksec command:
 
 Python file:
 
 
 ***Chall_02***
-checksec command:
+Checksec command:
  
 Python file:
 
 
 ***Chall_03***
-checksec command:
+Checksec command:
  
 Python file:
 
 
 ***Chall_04***
-checksec command:
+Checksec command:
  
 Python file:
 
 
 ***Chall_05***
-checksec command:
+Checksec command:
  
 Python file:
 
 
 ***Chall_06***
-checksec command:
+Checksec command:
  
 Python file:
 
 
 ***Chall_07***
-checksec command:
+Checksec command:
  
 Python file:
 
 
 ***Chall_08***
-checksec command:
+Checksec command:
  
 Python file:
 
 
 ***Chall_09***
-checksec command:
+Checksec command:
  
 Python file:
 
 
 ***Chall_10***
-checksec command:
+Checksec command:
  
 Python file:
 
 
 ***Chall_11***
-checksec command:
+Checksec command:
  
 Python file:
 
 
 ***Chall_12***
-checksec command:
+Checksec command:
  
 Python file:
 
 
 ***Chall_13***
-checksec command:
+Checksec command:
  
 Python file:
 
 
 ***Chall_14***
-checksec command:
+Checksec command:
  
 Python file:
 
 
 ***Chall_15*** 
-checksec command:
+Checksec command:
  
 Python file:
 
