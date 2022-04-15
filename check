@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo Which Chall_??
+
+read number
+
+cd chall_$number
+
+echo $(ls)
+
+read command
+
+checksec $command
