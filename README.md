@@ -9,7 +9,7 @@ These are a cumulation of the write-ups for all of project two. If the actual fi
 
 ***Chall_00***
 Checksec command:
-![Image 0](https://myoctocat.com/assets/images/base-octocat.svg)
+![Image 0](/images/1)
 
 Python file:
 
