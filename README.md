@@ -3,7 +3,7 @@ Project 2 Write-Ups
 
 **Description:**
 
-These are a cumulation of the write-ups for all of project two. If the actual files are wanted, they can be provided. 
+These are a cumulation of the write-ups for all of project two. WARNING: These python files do not run on their own. This is only here for the owner to understand the steps to exploite the files. 
 
 **Notes:** 
 
