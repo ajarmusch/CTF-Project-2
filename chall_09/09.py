@@ -7,3 +7,4 @@ p.recv()
 
 p.send(binary.string(binary.sym.key))
 p.interactive()
+# NOT FINISHED
