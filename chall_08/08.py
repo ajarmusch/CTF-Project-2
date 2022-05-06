@@ -7,4 +7,4 @@ p.recv()
 
 p.send(xor(binary.string(binary.sym.key),b'\x30'))
 p.interactive()
-# NOT FINISHED
+#NOT FINISHED
