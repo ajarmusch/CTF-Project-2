@@ -15,3 +15,4 @@ null = payload.find(b'\x00')
 p.recvuntil(payload[null-3:null])
 
 p.interactive()
+# NOT FINISHED
