@@ -13,5 +13,5 @@ p.recvuntil(payload[null-3:null])
 
 p.interactive()
 
-
+# NOT FINISHED
 #Sending $p until you get the the same value as the input. This will give you the offset. After the offset you need to swape puts with win. 
