@@ -5,7 +5,7 @@ binary = context.binary = ELF('./chall_14')
 
 p = process(binary.path)
 
-rebase_0 = lambda x : q(x + binary.address)
+rebase_0 = lambda x : p64(x + binary.address)
 
 rop = ''
 
