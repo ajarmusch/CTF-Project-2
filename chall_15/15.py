@@ -1,8 +1,7 @@
 from pwn import *
 
 binary = context.binary = ELF('./chall_15')
-
-p = process('./chall_15')
+p = process(binary.path)
 p.recv()
 
 p.sendline()
