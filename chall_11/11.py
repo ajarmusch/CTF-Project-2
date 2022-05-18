@@ -12,6 +12,6 @@ p.sendline(payload)
 
 p.interactive()
 
-# NOT FINISHED
+#FINISHED
 #Sending $p until you get the the same value as the input. This will give you the offset. 
 #After the offset you need to swape puts with win. 
